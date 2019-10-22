@@ -8,14 +8,17 @@
 // Requiring our Todo model
 var db = require("../models");
 
-const axios = require('axios');
+
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-    app.post("/", function(req, res) {
-    console.log(req.body)
+  app.post("/", function(req, res) {
+    var newReq = JSON.stringify(req.body)
+  console.log(newReq)
+  })
+}
 
 
 // const apis = ["https://api.gemini.com/v1/pubticker/btcusd", "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD"]
@@ -38,5 +41,3 @@ module.exports = function(app) {
 //         }).catch(function(err){
 //             res.send(`Error Thrown: ${err.message}`)
 //         })
-});
-}

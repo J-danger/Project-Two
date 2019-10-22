@@ -36,7 +36,3 @@ db.sequelize.sync().then(function() {
   });
 });
 
-//calebs on click for the animations and search
-$("#btn").click(function() {
-  $('.history').toggleClass('keyframes');
-});
