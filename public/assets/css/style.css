@@ -8,15 +8,7 @@
     margin-right: auto;
     width: 20em
   }
-  /* input[type=text] {
-    width: 230px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-  }
   
-  input[type=text]:focus {
-    width: 50%;
-  } */
   .relative {
     position: relative;
     width:200px;
@@ -28,6 +20,9 @@
     border: 3px solid #73AD21;
   }
 
+.table{
+font-family: 'Open Sans', sans-serif;
+}
   .btn{
     position: relative;
     left: 550px;
@@ -101,17 +96,17 @@
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {...}
+@media only screen and (max-width: 600px) 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...}
+@media only screen and (min-width: 600px) 
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
+@media only screen and (min-width: 768px) 
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {...}
+@media only screen and (min-width: 992px) 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {...}
-  }
+@media only screen and (min-width: 1200px) 
+  

@@ -51,5 +51,5 @@ db.sequelize.sync().then(function() {
 
 //calebs on click for the animations and search
 $("#btn").click(function() {
-  $('.history').toggleClass('transform-active');
+  $('.history').toggleClass('keyframes');
 });
