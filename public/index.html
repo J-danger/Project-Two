@@ -19,7 +19,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
-
+    <link rel="shortcut icon" href="./images/cryptocrocFinal.png">
 
 
 </head>
@@ -28,7 +28,90 @@
     <img class="center" src="./images/cryptocrocFinal.png" alt="logo">
     <div class="container">
     <div class="card">
+           
+            <ul class="tabs" role="tablist">
+                <li>
+                    <input type="radio" name="tabs" id="tab1" checked />
+                    <label for="tab1" 
+                           role="tab" 
+                           aria-selected="true" 
+                           aria-controls="panel1" 
+                           tabindex="0">BTC</label>
+                    <div id="tab-content1" 
+                         class="tab-content" 
+                         role="tabpanel" 
+                         aria-labelledby="description" 
+                         aria-hidden="false">
+                      
+                    </div>
+                </li>              
+                <li>
+                    <input type="radio" name="tabs" id="tab2" />
+                    <label for="tab2"
+                           role="tab" 
+                           aria-selected="false" 
+                           aria-controls="panel2" 
+                           tabindex="0">ETH</label>
+                    <div id="tab-content2" 
+                         class="tab-content"
+                         role="tabpanel" 
+                         aria-labelledby="specification" 
+                         aria-hidden="true">
+                      
+                    </div>
+                </li>
+                <li>
+                        <input type="radio" name="tabs" id="tab2" />
+                        <label for="tab2"
+                               role="tab" 
+                               aria-selected="false" 
+                               aria-controls="panel2" 
+                               tabindex="0">BCH</label>
+                        <div id="tab-content2" 
+                             class="tab-content"
+                             role="tabpanel" 
+                             aria-labelledby="specification" 
+                             aria-hidden="true">
+                          
+                        </div>
+                    </li>
+                    <li>
+                            <input type="radio" name="tabs" id="tab2" />
+                            <label for="tab2"
+                                   role="tab" 
+                                   aria-selected="false" 
+                                   aria-controls="panel2" 
+                                   tabindex="0">XMR</label>
+                            <div id="tab-content2" 
+                                 class="tab-content"
+                                 role="tabpanel" 
+                                 aria-labelledby="specification" 
+                                 aria-hidden="true">
+                              
+                            </div>
+                        </li>
+                        <li>
+                                <input type="radio" name="tabs" id="tab2" />
+                                <label for="tab2"
+                                       role="tab" 
+                                       aria-selected="false" 
+                                       aria-controls="panel2" 
+                                       tabindex="0">ZEC</label>
+                                <div id="tab-content2" 
+                                     class="tab-content"
+                                     role="tabpanel" 
+                                     aria-labelledby="specification" 
+                                     aria-hidden="true">
+                                  
+                                </div>
+                            </li>
+            </ul>
+            
+            <br style="clear: both;" />            
+           
+
         <div class="card-body">
+            
             <h5>BTC Prices</h5>
             <div id="cryptoChart">
                 <table class="table">
