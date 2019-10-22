@@ -96,6 +96,9 @@
         opacity: 1;
     }
 }
+.container {
+  margin-top: 30px;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {...}
@@ -111,3 +114,4 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {...}
+  }
