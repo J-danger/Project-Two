@@ -1,7 +1,25 @@
 module.exports = function(sequelize, DataTypes) {
-  var Todo = sequelize.define("Todo", {    
-    coin_pair: DataTypes.STRING
+  
+  var Post = sequelize.define("Prices", {
+    coin_pair: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    price: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    lastDate: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   });
-  console.log(Todo)
-  return Todo;
+  return Post;
+  
 };

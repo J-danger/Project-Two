@@ -25,21 +25,8 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 require("./routes/api-Routes.js")(app);
+require("./routes/html-routes.js")(app);
 
-
-app.get("/test", function (req, res){
-    axios.get("https://api.coinbase.com/v2/prices/:USD_BTC/buy").then(function(data){
-    res.json(data)
-    })
-})
-
-  app.get('/', function(req, res, next) {
-    // Handle the get for this route
-  });
-
-  app.post('/', function(req, res, next) {
-    // Handle the post for this route
-  })
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
