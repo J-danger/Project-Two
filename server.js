@@ -48,3 +48,8 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+//calebs on click for the animations and search
+$("#btn").click(function() {
+  $('.history').toggleClass('keyframes');
+});
