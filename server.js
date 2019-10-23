@@ -36,3 +36,23 @@ db.sequelize.sync().then(function() {
   });
 });
 
+var p1 = axios.get('https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD', { params: {} })
+var p2 = axios.get('https://api.gemini.com/v1/pubticker/btcusd', { params: {} })
+var p3 = axios.get('https://api.binance.us/api/v3/ticker/price?symbol=BTCUSDT', { params: {} })
+var p4 = axios.get('https://api.coinbase.com/v2/prices/spot?currency=USD', { params: {} })
+var p5 = axios.get('https://api.kraken.com/0/public/Ticker?pair=XBTUSD', { params: {} })
+Promise.all([p1 + p2 + p3 + p4 + p5]).then(function(values) {
+    console.log("All Promises have Resolved! Result: " + values);
+    console.log(p1 + p2 + p3 + p4 + p5)
+})
+
+// Want to use async/await? Add the `async` keyword to your outer function/method.
+// async function getUser() {
+//   try {
+//     const response = await axios.get('/user?ID=12345');
+//     console.log(response);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
