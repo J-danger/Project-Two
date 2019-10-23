@@ -84,7 +84,87 @@
                   $("tbody").append(tRow);
                 });
 
-            </script>       
+            </script>   
+             <img class="center" src="./images/cryptocrocFinal.png" alt="logo">
+ 
+   
+
+             <script type="text/javascript">
+                 // The below code fills in the first row of the table
+                 
+                 var queryURL = "/api/prices";
+             
+                 $.ajax({
+                   url: queryURL,
+                   method: "GET"
+                 }).then(function(response) {
+                   // Create a new table row element
+                   var tRow = $("<tr>");
+ 
+                       var arrayAverage = Object.entries(response[0])
+                       var stringAverage = JSON.stringify(arrayAverage[3])
+                      
+ 
+                       var arrayGemini = Object.entries(response[1])
+                       var stringGemini = JSON.stringify(arrayGemini[3])
+                       
+ 
+                       var arrayBinance = Object.entries(response[2])
+                       var stringBinance = JSON.stringify(arrayBinance[3])
+                      
+ 
+                       var arrayCoinbase = Object.entries(response[3])
+                       var stringCoinbase = JSON.stringify(arrayCoinbase[3])
+                     
+                       var arrayKraken = Object.entries(response[4])
+                       var stringKraken = JSON.stringify(arrayKraken[3])
+                       
+                       
+ 
+                     // var tHead = $("<th>")
+                     console.log()
+                   // Methods run on jQuery selectors return the selector they we run on
+                 //   // This is why we can create and save a reference to a td in the same statement we update its text
+                   
+                     $("#averageLast").html(stringAverage)
+                     $("#geminiLast").html(stringGemini)
+                     $("#binanceLast").html(stringBinance)
+                     $("#coinbaseLast").html(stringCoinbase)
+                     $("#krakenLast").html(stringKraken)
+                   var gemini = $("<td>").text(JSON.stringify(response[1]));
+                   var binance = $("<td>").text(JSON.stringify(response[2]));
+                   var coinbase = $("<td>").text(JSON.stringify(response[3]));
+                   var kraken = $("<td>").text(JSON.stringify(response[4]));
+                 //   var yearTd = $("<td>").text(response.Year);
+                 //   var actorsTd = $("<td>").text(response.Actors);
+                     
+                   // Append the newly created table data to the table row
+                 //   tRow.append(average, gemini, binance, coinbase, kraken);
+                 //   tHead.append(tRow)
+                   // Append the table row to the table body
+                   $("tbody").append(tRow);
+                 });
+ 
+             </script>       
+        <div class="card">
+ =======
+ 
+     <img class="center" src="./images/cryptocrocFinal.png" alt="logo">
+ 
+ 
+     <form>
+         <select class="relative">
+             <option value="bitcoin">Bitcoin</option>
+             <option value="litecoin">Litecoin</option>
+             <option value="ripple">Ripple</option>
+             <option value="bitcoin cash">Bitcoin cash</option>
+             <option value="dogecoin">Dogecoin</option>
+         </select>
+         <input type="button" value="Submit" class="btn">
+     </form>
+ 
+ 
+         
        <div class="card">
         <div class="card-body">
             
