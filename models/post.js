@@ -10,14 +10,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     coin_pair: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false,      
       validate: {
         len: [1]
       }
     },
     price: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false,     
       validate: {
         len: [1]
       }
@@ -25,7 +25,10 @@ module.exports = function(sequelize, DataTypes) {
     lastDate: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    }, 
+   
+    
+
   });
   return Prices;
   

@@ -23,8 +23,9 @@
 </head>
 
 <body>
-    
+    <div class="croc">
     <img class="center" src="./images/cryptocrocFinal.png" alt="logo">
+    </div>
  
    
 
@@ -72,16 +73,20 @@
                     $("#binanceLast").html(response[2].price)
                     $("#coinbaseLast").html(response[3].price)
                     $("#krakenLast").html(response[4].price)
+
+                    var today = new Date();
+                    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();  
+                   
                     // time
-                    $("#averageTime").html(response[0].lastDate)
-                    $("#geminiTime").html(response[1].lastDate)
-                    $("#binanceTime").html(response[2].lastDate)
-                    $("#coinbaseTime").html(response[3].lastDate)
-                    $("#krakenTime").html(response[4].lastDate)
+                    $("#averageTime").html(time)
+                    $("#geminiTime").html(time)
+                    $("#binanceTime").html(time)
+                    $("#coinbaseTime").html(time)
+                    $("#krakenTime").html(time)
                 });
 
             </script>   
-                
+        <div class="center-content">
        <div class="card">
         <div class="card-body">
             
@@ -99,7 +104,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th class="price-text" scope="row">Average</th>
+                            <th class="price-text" scope="row" >Average</th>
                             <td class="price-text" id="averageLast"></td>
                             <td class="price-text" id="averageTime"></td>
                            
@@ -134,6 +139,7 @@
         </div>
         </div>
     </div>
+</div>
 </div>
        
     
