@@ -14,55 +14,13 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  app.post("/", function(req, res) {   
+  app.get("/api/posts/", function(req, res) {
+    db.Post.findAll({})
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
   
-  var exchange_name = req.body.exchange_name
-  var coin_pair = req.body.coin_pair
-  var price = req.body.price
-  var lastTime = req.body.lastTime
-
-  var obj = (exchange_name, coin_pair, price, lastTime)
-  var array = Array.from([exchange_name, coin_pair, price, lastTime])
-  var string = array.toString()
-
-  console.log(req.body)
-
-  db.Prices.bulkCreate(array, { 
-    exchange_name: {    
-    type: DataTypes.STRING,
-    allowNull: false,
-    
-  },
-  coin_pair: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      len: [1]
-    }
-  },
-  price: {
-    type: DataTypes.STRING,
-    allowNull: false,
-   
-  },
-  lastDate: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  }})
-  
- 
-  // var d = new Date();
-  // var timeNow = d.getTime();
-  // db.Post.create({
-  //   string
-  // })
-  // .then(function(dbPost) {
-  //   // We have access to the new todo as an argument inside of the callback function
-  //   res.json(dbPost);
-  // });
-
-
-  })
 }
 
 

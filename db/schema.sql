@@ -3,7 +3,7 @@ CREATE DATABASE crypto_db;
 
 USE crypto_db;
 
-CREATE TABLE price (
+CREATE TABLE Prices (
   exchange_name varchar(255) NOT NULL,
   coin_pair varchar(255) NOT NULL,
   price INTEGER NOT NULL,   
