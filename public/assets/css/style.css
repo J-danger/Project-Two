@@ -1,5 +1,6 @@
   body {
     background-color: #454242;
+    cursor: url('https://cdn4.iconfinder.com/data/icons/24x24-free-application-icons/24/Dollar.png'),auto;
 }
 
 .center {
@@ -10,75 +11,21 @@
   }
   
   .relative {
-    position: relative;
+    position: absolute;
     width:200px;
     height:50px;
     left: 550px;
     font-size:30px;
     font-family: 'Open Sans', sans-serif;
-    top: 50px;
+    top: 25%;
+    background-color:silver;
     border: 3px solid #73AD21;
+    cursor: url('https://cdn4.iconfinder.com/data/icons/24x24-free-application-icons/24/Dollar.png'),auto;
   }
 
 .table{
 font-family: 'Open Sans', sans-serif;
-}
-  .btn{
-    position: relative;
-    left: 550px;
-    top: 50px;
-    background-color: rgb(80, 252, 46); /* Green */
-    border: none;
-    color: black;
-    border-radius: 4px;
-    /* padding: 15px 32px; */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
-  .history {
-    position: relative;
-    left: 100px;
-    top: 0px;
-    opacity: 0; 
-    background: blue;
-    height: 300px;
-    width: 200px; 
-    animation: opacityOn 5s normal forwards;
-    animation-delay: 5s;
-}
-
-@keyframes opacityOn {
- 
-    100% {
-        opacity: 1;
-    }
-}
-.pricesGraph {
-    position: relative;
-    left: 875px;
-    bottom: 400px;
-    opacity: 0; 
-    background: red;
-    height: 450px;
-    width: 400px; 
-    animation: opacityOn 5s normal forwards;
-    animation-delay: 5s;
-}
-
-@keyframes opacityOn {
- 
-    100% {
-        opacity: 1;
-    }
-}
-.timerRefresh {
-    position: relative;
-    left: 200px;
-    bottom: 400px;
-    opacity: 0; 
-    background: green;
+    opacity: 0;  
     height: 100px;
     width: 600px; 
     animation: opacityOn 5s normal forwards;
@@ -91,22 +38,45 @@ font-family: 'Open Sans', sans-serif;
         opacity: 1;
     }
 }
-.container {
+.card{
+ left:25%;
+  background-color:silver;
+  position: relative;
+  width:650px;
+  height:200;
+    top: 200px;
+}
+
+  .btn{
+    position: absolute;
+    left:58%;
+    top:26%;
+    background-color: rgb(80, 252, 46);
+    border-color:black;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; 
+  }
+ 
+.container{
   margin-top: 30px;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) 
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) 
+/* Small devices (portrait tablets and large phones, 600px and up)  */
+ @media only screen and (min-width: 600px) {}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) 
+@media only screen and (min-width: 768px) {}
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) 
+@media only screen and (min-width: 992px) {}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) 
-  
+@media only screen and (min-width: 1200px) {}
+   
