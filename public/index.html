@@ -40,23 +40,24 @@
                   // Create a new table row element
                   var tRow = $("<tr>");
 
-                      var arrayAverage = Object.entries(response[0])
-                      var stringAverage = JSON.stringify(arrayAverage[3])
+                      var arrayAveragePrice = Object.entries(response[0])
+                      var stringAveragePrice = JSON.stringify(arrayAveragePrice[3])
                      
 
-                      var arrayGemini = Object.entries(response[1])
-                      var stringGemini = JSON.stringify(arrayGemini[3])
+                      var arrayGeminiPrice = Object.entries(response[1])
+                      var stringGeminiPrice = JSON.stringify(arrayGeminiPrice[3])
                       
 
-                      var arrayBinance = Object.entries(response[2])
-                      var stringBinance = JSON.stringify(arrayBinance[3])
+                      var arrayBinancePrice = Object.entries(response[2])
+                      var stringBinancePrice = JSON.stringify(arrayBinancePrice[3])
                      
 
-                      var arrayCoinbase = Object.entries(response[3])
-                      var stringCoinbase = JSON.stringify(arrayCoinbase[3])
+                      var arrayCoinbasePrice = Object.entries(response[3])
+                      var stringCoinbasePrice = JSON.stringify(arrayCoinbasePrice[3])
                     
-                      var arrayKraken = Object.entries(response[4])
-                      var stringKraken = JSON.stringify(arrayKraken[3])
+                      var arrayKrakenPrice = Object.entries(response[4])
+                      var stringKrakenPrice = JSON.stringify(arrayKrakenPrice[3])
+                    //   console.log(arrayKraken)
                       
                       
 
@@ -65,106 +66,20 @@
                   // Methods run on jQuery selectors return the selector they we run on
                 //   // This is why we can create and save a reference to a td in the same statement we update its text
                   
-                    $("#averageLast").html(stringAverage)
-                    $("#geminiLast").html(stringGemini)
-                    $("#binanceLast").html(stringBinance)
-                    $("#coinbaseLast").html(stringCoinbase)
-                    $("#krakenLast").html(stringKraken)
+                    $("#averageLast").html(stringAveragePrice)
+                    $("#geminiLast").html(stringGeminiPrice)
+                    $("#binanceLast").html(stringBinancePrice)
+                    $("#coinbaseLast").html(stringCoinbasePrice)
+                    $("#krakenLast").html(stringKrakenPrice)
                   var gemini = $("<td>").text(JSON.stringify(response[1]));
                   var binance = $("<td>").text(JSON.stringify(response[2]));
                   var coinbase = $("<td>").text(JSON.stringify(response[3]));
-                  var kraken = $("<td>").text(JSON.stringify(response[4]));
-                //   var yearTd = $("<td>").text(response.Year);
-                //   var actorsTd = $("<td>").text(response.Actors);
-                    
-                  // Append the newly created table data to the table row
-                //   tRow.append(average, gemini, binance, coinbase, kraken);
-                //   tHead.append(tRow)
-                  // Append the table row to the table body
+                  var kraken = $("<td>").text(JSON.stringify(response[4]));               
                   $("tbody").append(tRow);
                 });
 
             </script>   
-             <img class="center" src="./images/cryptocrocFinal.png" alt="logo">
- 
-   
-
-             <script type="text/javascript">
-                 // The below code fills in the first row of the table
-                 
-                 var queryURL = "/api/prices";
-             
-                 $.ajax({
-                   url: queryURL,
-                   method: "GET"
-                 }).then(function(response) {
-                   // Create a new table row element
-                   var tRow = $("<tr>");
- 
-                       var arrayAverage = Object.entries(response[0])
-                       var stringAverage = JSON.stringify(arrayAverage[3])
-                      
- 
-                       var arrayGemini = Object.entries(response[1])
-                       var stringGemini = JSON.stringify(arrayGemini[3])
-                       
- 
-                       var arrayBinance = Object.entries(response[2])
-                       var stringBinance = JSON.stringify(arrayBinance[3])
-                      
- 
-                       var arrayCoinbase = Object.entries(response[3])
-                       var stringCoinbase = JSON.stringify(arrayCoinbase[3])
-                     
-                       var arrayKraken = Object.entries(response[4])
-                       var stringKraken = JSON.stringify(arrayKraken[3])
-                       
-                       
- 
-                     // var tHead = $("<th>")
-                     console.log()
-                   // Methods run on jQuery selectors return the selector they we run on
-                 //   // This is why we can create and save a reference to a td in the same statement we update its text
-                   
-                     $("#averageLast").html(stringAverage)
-                     $("#geminiLast").html(stringGemini)
-                     $("#binanceLast").html(stringBinance)
-                     $("#coinbaseLast").html(stringCoinbase)
-                     $("#krakenLast").html(stringKraken)
-                   var gemini = $("<td>").text(JSON.stringify(response[1]));
-                   var binance = $("<td>").text(JSON.stringify(response[2]));
-                   var coinbase = $("<td>").text(JSON.stringify(response[3]));
-                   var kraken = $("<td>").text(JSON.stringify(response[4]));
-                 //   var yearTd = $("<td>").text(response.Year);
-                 //   var actorsTd = $("<td>").text(response.Actors);
-                     
-                   // Append the newly created table data to the table row
-                 //   tRow.append(average, gemini, binance, coinbase, kraken);
-                 //   tHead.append(tRow)
-                   // Append the table row to the table body
-                   $("tbody").append(tRow);
-                 });
- 
-             </script>       
-        <div class="card">
- =======
- 
-     <img class="center" src="./images/cryptocrocFinal.png" alt="logo">
- 
- 
-     <form>
-         <select class="relative">
-             <option value="bitcoin">Bitcoin</option>
-             <option value="litecoin">Litecoin</option>
-             <option value="ripple">Ripple</option>
-             <option value="bitcoin cash">Bitcoin cash</option>
-             <option value="dogecoin">Dogecoin</option>
-         </select>
-         <input type="button" value="Submit" class="btn">
-     </form>
- 
- 
-         
+                
        <div class="card">
         <div class="card-body">
             
@@ -175,6 +90,8 @@
                         <tr>
                             <th class="price-text" scope="col">Exchange</th>
                             <th class="price-text" scope="col">Current Price</th>
+                            <th class="price-text" scope="col">Updated</th>
+
                             
                         </tr>
                     </thead>
@@ -182,26 +99,31 @@
                         <tr>
                             <th class="price-text" scope="row">Average</th>
                             <td class="price-text" id="averageLast"></td>
+                            <td class="price-text" id="averageTime"></td>
                            
                         </tr>
                         <tr>
                             <th class="price-text" scope="row">Gemini</th>
                             <td class="price-text" id="geminiLast"></td>
+                            <td class="price-text" id="geminiTime"></td>
                             
                         </tr>
                         <tr>
                             <th class="price-text" scope="row">Binance</th>
                             <td class="price-text" id="binanceLast"></td>
+                            <td class="price-text" id="binanceTime"></td>
                         
                         </tr>
                         <tr>
                             <th class="price-text" scope="row">Coinbase</th>
                             <td class="price-text" id="coinbaseLast"></td>
+                            <td class="price-text" id="coinbaseTime"></td>
                          
                         </tr>
                         <tr>
                             <th class="price-text" scope="row">Kraken</th>
                             <td class="price-text" id="krakenLast"></td>
+                            <td class="price-text" id="krakenTime"></td>
                             
                         </tr>
                     </tbody>
