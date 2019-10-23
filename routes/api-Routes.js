@@ -21,10 +21,35 @@ module.exports = function(app) {
   var price = req.body.price
   var lastTime = req.body.lastTime
 
+  var obj = (exchange_name, coin_pair, price, lastTime)
   var array = Array.from([exchange_name, coin_pair, price, lastTime])
   var string = array.toString()
 
-  console.log(string)
+  console.log(req.body)
+
+  db.Prices.bulkCreate(array, { 
+    exchange_name: {    
+    type: DataTypes.STRING,
+    allowNull: false,
+    
+  },
+  coin_pair: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      len: [1]
+    }
+  },
+  price: {
+    type: DataTypes.STRING,
+    allowNull: false,
+   
+  },
+  lastDate: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }})
+  
  
   // var d = new Date();
   // var timeNow = d.getTime();

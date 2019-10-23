@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   
-  var Post = sequelize.define("Prices", {
+  var Prices = sequelize.define("Prices", {
     exchange_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -27,6 +27,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     }
   });
-  return Post;
+  return Prices;
   
 };
