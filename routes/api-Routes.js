@@ -17,6 +17,7 @@ module.exports = function(app) {
   app.get("/api/prices", function (req, res) {
     var d = new Date();
     var timeNow = d.getTime();
+    
   
     function bitcoin() {
         return new Promise(function(resolve, reject) {
