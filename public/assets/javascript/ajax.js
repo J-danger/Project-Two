@@ -2,94 +2,76 @@ $(document).ready(function() {
     
  
   
-  var api1 =  $.ajax({url: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD", success: function(response){
-        
-        // var btcAverageLast = response.last    
-        // console.log("BTC average: " + btcAverageLast) 
-        // $("#averageLast").html(btcAverageLast)
-        
-        var newCoin = {
-            coin_pair: response.display_symbol,
-            price: parseInt(response.last),
-            time: response.timestamp        
-        };    
-                 
-        
-        $.post("/", newCoin, function (results){
-           
-        })   
+    var api1 =  $.ajax({url: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD", success: function(response){
+         
     }})
     
     var api2 =  $.ajax({url: "https://api.gemini.com/v1/pubticker/btcusd", success: function(response){
-        
-        var newCoin = {
-            coin_pair: "BTC-USD",
-            price: parseInt(response.last),
-            time: response.volume.timestamp        
-        };  
-        
-        $.post("/", newCoin, function (results){
-           
-        })  
+     
     }});
     var api3 =  $.ajax({url: "http://cors-anywhere.herokuapp.com/https://api.binance.us/api/v3/ticker/price?symbol=BTCUSDT", success: function(response){
-        
-        var d = new Date();
-        var n = d.getTime();
-        var newCoin = {
-            coin_pair: "BTC-USD",
-            price: parseInt(response.price),
-            time: n,          
-            
-        };  
-        
-        $.post("/", newCoin, function (results){
-           
-        })  
+       
     }});
     
     var api4 =   $.ajax({url: "https://api.coinbase.com/v2/prices/spot?currency=USD", success: function(response){
-        
-        var d = new Date();
-        var n = d.getTime();
-        var newCoin = {
-            coin_pair: response.data.base + "-" + response.data.currency,
-            price: parseInt(response.data.amount),
-            time: n
-            
-        };  
-       
-        $.post("/", newCoin, function (results){
-           
-        })  
-        
+      
     }}); 
     
     var api5 =  $.ajax({url: "https://api.kraken.com/0/public/Ticker?pair=XBTUSD", success: function(response){
-        
-        var d = new Date();
-        var n = d.getTime();
-        
-        var newCoin = {
-            coin_pair: "BTC-USD",
-            price: parseInt(response.result.XXBTZUSD.b[0]),
-            time: n,  
-            
-        };  
-        
-        $.post("/", newCoin, function (results){
-            
-        })  
-        
+      
     }});        
     
-    $.when(api1, api2, api2, api4, api5).done(function(average, gemini, binance, coinbase, kraken){
-        console.log(average[0].last)
-        console.log(gemini[0].last)
-        console.log(binance[0].last)
-        console.log(coinbase[0].data.amount)
-        console.log(kraken[0].result.XXBTZUSD.o)
-    })
-    // submitPrices();
- 
-    })
+    $.when(api1, api2, api3, api4, api5).done(function(average, gemini, binance, coinbase, kraken){
+        var d = new Date();
+        var timeNow = d.getTime();
+         average =        {
+            exchange_name: "Average",
+            coin_pair: "BTC-USD",
+            price: parseInt(average[0].last),
+            lastTime: average[0].timestamp        
+        };   
+        console.log("Average: ",average)
+        $.post("/", average, function (results){
+            
+        })  
+        gemini =  {
+            exchange_name: "gemini",
+            coin_pair: "BTC-USD",
+            price: parseInt(gemini[0].last)  ,
+            lastTime: gemini[0].volume.timestamp        
+        };   
+        console.log("Gemini: ",gemini)
+        $.post("/", gemini, function (results){
+            
+        })        
+        binance = {
+            exchange_name: "binance",
+            coin_pair: "BTC-USD",
+            price: parseInt(binance[0].last),
+            lastTime: timeNow       
+        };   
+        console.log("Binance: ",binance)
+        $.post("/", binance, function (results){
+            
+        })  
+        coinbase = {
+            exchange_name: "coinbase",
+            coin_pair: "BTC-USD",
+            price: parseInt(coinbase[0].data.amount),
+            lastTime: timeNow      
+        };   
+        console.log("Coinbase: ",coinbase)     
+        $.post("/", coinbase, function (results){
+            
+        })   
+        kraken = {
+            exchange_name: "kraken",
+            coin_pair: "BTC-USD",
+            price: parseInt(kraken[0].result.XXBTZUSD.o) ,
+            lastTime: timeNow,    
+        };   
+        console.log("Kraken: ", kraken)  
+        $.post("/", kraken, function (results){            
+        })     
+    }) 
+ })
