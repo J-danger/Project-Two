@@ -20,77 +20,6 @@
     border: 3px solid #73AD21;
   }
 
-.table{
-font-family: 'Open Sans', sans-serif;
-}
-  .btn{
-    position: relative;
-    left: 550px;
-    top: 50px;
-    background-color: rgb(80, 252, 46); /* Green */
-    border: none;
-    color: black;
-    border-radius: 4px;
-    /* padding: 15px 32px; */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
-  .history {
-    position: relative;
-    left: 100px;
-    top: 0px;
-    opacity: 0; 
-    background: blue;
-    height: 300px;
-    width: 200px; 
-    animation: opacityOn 5s normal forwards;
-    animation-delay: 5s;
-}
-
-@keyframes opacityOn {
- 
-    100% {
-        opacity: 1;
-    }
-}
-.pricesGraph {
-    position: relative;
-    left: 875px;
-    bottom: 400px;
-    opacity: 0; 
-    background: red;
-    height: 450px;
-    width: 400px; 
-    animation: opacityOn 5s normal forwards;
-    animation-delay: 5s;
-}
-
-@keyframes opacityOn {
- 
-    100% {
-        opacity: 1;
-    }
-}
-.timerRefresh {
-    position: relative;
-    left: 200px;
-    bottom: 400px;
-    opacity: 0; 
-    background: green;
-    height: 100px;
-    width: 600px; 
-    animation: opacityOn 5s normal forwards;
-    animation-delay: 5s;
-}
-
-@keyframes opacityOn {
- 
-    100% {
-        opacity: 1;
-    }
-}
 .container {
   margin-top: 30px;
 }
@@ -105,6 +34,7 @@ font-family: 'Open Sans', sans-serif;
   color: white;
   box-shadow: 1px 1px 1px 1px black;
 }
+
 
 #tableTitle {  
   margin-bottom: 20px;
@@ -126,6 +56,8 @@ font-family: 'Open Sans', sans-serif;
 .center-content {
   text-align: center
 }
+
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px){ 
@@ -166,5 +98,19 @@ font-family: 'Open Sans', sans-serif;
 {.card-body {
   margin-top: 40px;
   width: 40%;
+  display: inline-block;  
+  }}
+/* Extra large devices (large laptops and desktops, 1400px and up) */
+@media only screen and (min-width: 1400px) 
+{.card-body {
+  margin-top: 40px;
+  width: 50%;
+  display: inline-block;  
+  }}
+  /* Extra large devices (large laptops and desktops, 4000px and up) */
+@media only screen and (min-width: 1400px) 
+{.card-body {
+  margin-top: 40px;
+  width: 50%;
   display: inline-block;  
   }}
