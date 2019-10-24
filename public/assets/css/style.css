@@ -97,7 +97,7 @@
 @media only screen and (min-width: 1200px) 
 {.card-body {
   margin-top: 40px;
-  width: 40%;
+  width: 50%;
   display: inline-block;  
   }}
 /* Extra large devices (large laptops and desktops, 1400px and up) */
